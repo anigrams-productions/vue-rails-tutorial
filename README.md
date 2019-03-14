@@ -1,24 +1,21 @@
-# README
+# Shopping Cart
+## With Vue.js and Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is a demonstration of how to incorporate Vue.js into a Rails application. It was designed to accompany "Vue.js & Rails: An Unlikely Friendship".
 
-Things you may want to cover:
+## Dependencies
+* NodeJS
+* npm or yarn
 
-* Ruby version
+## Getting Started
+`bundle install`
 
-* System dependencies
+`yarn` or `npm install`
 
-* Configuration
+`bundle exec rails s`
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Concepts Demonstrated
+* Vue SPA in Rails app (app/javascript/packs/hello_vue.js)
+* vue-router for routing (app/javascript/packs/router.js)
+* vuex store for centralized state management (app/javascript/packs/store.js)
+* axios to make REST API calls (app/javascript/packs/store.js)
