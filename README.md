@@ -1,5 +1,4 @@
-# Shopping Cart
-## With Vue.js and Ruby on Rails
+# Shopping Cart with Vue.js and Ruby on Rails
 
 This project is a demonstration of how to incorporate Vue.js into a Rails application. It was designed to accompany "Vue.js & Rails: An Unlikely Friendship".
 
