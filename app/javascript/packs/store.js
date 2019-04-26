@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import _ from 'lodash'
 import axios from 'axios'
+import {Decimal} from 'decimal.js'
 
 Vue.use(Vuex)
 
@@ -23,10 +24,10 @@ const store = new Vuex.Store({
       return state.cart.reduce((sum, item) => sum + (item.quantity || 0), 0)
     },
     totalPrice(state) {
-      return state.cart.reduce((sum, item) => sum + (item.price * (item.quantity || 0)), 0)
+      return state.cart.reduce((sum, item) => sum.plus(new Decimal(item.price).times(new Decimal(item.quantity || 0))), new Decimal(0.00))
     },
     itemQuantity(state) {
-      // Here, we're actually returning a function so that we can find the current cartItem 
+      // Here, we're actually returning a function so that we can find the current cartItem
       // based on an item passed in. This getter is called like this.itemQuantity(item).
       // Note that we have to return a function here because the only allowed parameter for a getter
       // is state, representing the current state of the store.
@@ -49,7 +50,7 @@ const store = new Vuex.Store({
     }
   },
 
-  // Mutations are methods that actually change (or mutate) the current state. 
+  // Mutations are methods that actually change (or mutate) the current state.
   // You "dispatch" actions and "commit" mutations.
   mutations: {
     addToCart (state, item) {
